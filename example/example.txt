@@ -1,0 +1,5 @@
+debian:bookworm
+golang:1.21.5-bookworm
+postgres:16-alpine
+vault:1.13.3
+redis:7.2.3-alpine

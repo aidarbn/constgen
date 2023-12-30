@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"path/filepath"
 	"regexp"
 	"strings"
 	"unicode"
@@ -33,6 +34,15 @@ func main() {
 		os.Exit(1)
 	}
 	defer file.Close()
+
+	// Create the output directory if it does not exist
+	outputDir := filepath.Dir(*outputPath)
+	if _, err := os.Stat(outputDir); os.IsNotExist(err) {
+		err = os.MkdirAll(outputDir, 0755)
+		if err != nil {
+			log.Fatal(err)
+		}
+	}
 
 	// Create the output file
 	outputFile, err := os.Create(*outputPath)
