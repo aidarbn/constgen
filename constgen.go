@@ -38,7 +38,7 @@ func main() {
 	// Create the output directory if it does not exist
 	outputDir := filepath.Dir(*outputPath)
 	if _, err := os.Stat(outputDir); os.IsNotExist(err) {
-		err = os.MkdirAll(outputDir, 0755)
+		err = os.MkdirAll(outputDir, 0777)
 		if err != nil {
 			log.Fatal(err)
 		}
@@ -75,7 +75,7 @@ func main() {
 
 	// Write the constants to the output file
 	for _, c := range consts {
-		fmt.Fprintf(outputFile, "    %-*s = \"%s\"\n", maxLen, c.Name, c.Value)
+		fmt.Fprintf(outputFile, "\t%-*s = \"%s\"\n", maxLen, c.Name, c.Value)
 	}
 
 	// Write the closing line of the const block
