@@ -38,7 +38,7 @@ func main() {
 	// Create the output directory if it does not exist
 	outputDir := filepath.Dir(*outputPath)
 	if _, err := os.Stat(outputDir); os.IsNotExist(err) {
-		err = os.MkdirAll(outputDir, 0755)
+		err = os.MkdirAll(outputDir, 0o750)
 		if err != nil {
 			log.Fatal(err)
 		}
