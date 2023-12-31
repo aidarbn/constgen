@@ -114,7 +114,11 @@ func toConstName(input string) string {
 	if !unicode.IsLetter(rune(constName[0])) {
 		constName = "C" + constName // Prefix with 'C' if first character is not a letter
 	}
-	return keepThreeConsecutiveNumbers(constName)
+	constName = keepThreeConsecutiveNumbers(constName)
+	if len(constName) > 20 {
+		constName = constName[:20]
+	}
+	return constName
 }
 
 func keepThreeConsecutiveNumbers(input string) string {

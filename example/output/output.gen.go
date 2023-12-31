@@ -14,4 +14,5 @@ const (
 	Vault113_1             = "vault:1.:@$-!13.3"
 	Redis723Alpine         = "redis:7.2.3-alpine"
 	C123                   = "1231231737127"
+	DebianBookwormDebian   = "debian:bookworm:debian:bookworm:debian:bookworm:debian:bookworm:debian:bookworm:"
 )

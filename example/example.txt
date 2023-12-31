@@ -13,3 +13,4 @@ vault:1.:@$-!13.3
 redis:7.2.3-alpine
 1231231737127
 1231231737127
+debian:bookworm:debian:bookworm:debian:bookworm:debian:bookworm:debian:bookworm:
